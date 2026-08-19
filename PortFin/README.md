@@ -130,7 +130,7 @@ graph LR
 ### 2.3 Technical Specification
 *   **Data Source Integration**: Fetches end-of-day or live prices via the `yfinance` API.
 *   **Schema**: `[Trade_ID, Strategy, Ticker, ISIN, AssetClass, Jurisdiction, Quantity, MtM_Price, Notional]`.
-*   **Notional Calculation**: $Notional = \text{Quantity} \times \text{MtM\_Price}$.
+*   **Notional Calculation**: $Notional = \text{Quantity} \times \text{MtM}_{Price}$.
 
 ### 2.4 Business Example
 *   **Scenario**: The firm holds 10,000 shares of AAPL (StatArb) and is short 4,000 shares of AAPL (VolArb). AAPL is trading at $150.
@@ -306,7 +306,7 @@ graph TD
 Uses `Actual/360` day count.
 *   **Fee-Based Borrowing**: $PnL_{daily} = - \left( \frac{\text{Notional} \times \text{Fee\_Rate}}{360} \right)$
 *   **TRS Long Exposure**: 
-    \[ PnL_{total} = (\text{Quantity} \times \Delta Price) - \left( \frac{\text{Notional} \times (\text{SOFR} + \text{Spread})}{360} \right) \]
+    $PnL_{total} = (\text{Quantity} \times \Delta \text{Price}) - \left( \frac{\text{Notional} \times (\text{SOFR} + \text{Spread})}{360} \right)$
 
 ### 8.4 Business Example
 *   **Scenario**: TRS Long 10,000 TSLA. Price $200. Financing 5.50%. TSLA rises to $205.
