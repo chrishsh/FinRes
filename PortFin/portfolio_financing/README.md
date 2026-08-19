@@ -1,6 +1,6 @@
-#HowTo Guide
+# HowTo Guide
 ## Installation Requirements
 pip install -r requirements.txt
 
-# Run
+## Run
 streamlit run app/dashboard.py
