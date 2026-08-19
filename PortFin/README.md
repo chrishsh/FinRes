@@ -304,7 +304,7 @@ graph TD
 
 ### 8.3 Technical Specification
 Uses `Actual/360` day count.
-*   **Fee-Based Borrowing**: $PnL_{daily} = - \left( \frac{\text{Notional} \times \text{Fee\_Rate}}{360} \right)$
+*   **Fee-Based Borrowing**: $PnL_{daily} = - \left( \frac{\text{Notional} \times \text{Fee Rate}}{360} \right)$
 *   **TRS Long Exposure**: 
     $PnL_{total} = (\text{Quantity} \times \Delta \text{Price}) - \left( \frac{\text{Notional} \times (\text{SOFR} + \text{Spread})}{360} \right)$
 
