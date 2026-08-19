@@ -1,3 +1,43 @@
+# Portfolio Financing System
+
+This document outlines the architecture and implementation plan for the **Automated Portfolio Financing System**, serving as a blueprint for both the interactive Jupyter Notebook prototype and the web-based front-end production suite.
+
+## Goal Description
+Build an Automated Portfolio Financing system that functions similarly to an Automated Market Maker (AMM). The system autonomously calculates net exposure, allocates optimal collateral, tracks P&L, simulates market conditions, and ensures **cross-border regulatory compliance**. 
+
+Manual intervention is explicitly supported via a comprehensive **Manual Trade Entry Module**, accommodating a full suite of financing instruments (Equity/Bond Borrowing, Repo, Swaps, Sell/Buybacks, etc.).
+
+## Unified Product Specification
+For complete documentation, zoom-in workflow diagrams, mathematical models, and compliance rules covering the entire system, please refer to the specification below.
+
+
+## Product Overview
+
+```text
+portfolio_financing/
+│
+├── main.py                 # The automated pipeline runner (orchestrator)
+├── requirements.txt        # Dependencies (pandas, scipy, yfinance, streamlit, pytest)
+│
+├── src/
+│   ├── __init__.py
+│   ├── inventory.py        # Manages positions, market data (yfinance)
+│   ├── internalization.py  # Internalization mathematical logic
+│   ├── compliance.py       # US (Reg T/SHO) & APAC (SFC/FSA/MAS) Rule Engine
+│   ├── optimizer.py        # MILP/LP Collateral Optimization engine
+│   ├── locates.py          # Borrow rate simulation & Reg SHO locate checks
+│   ├── manual_trades.py    # Manual trade booking & blotter management
+│   └── pnl.py              # Exact pricing math for Repo, TRS, Borrowing, etc.
+│
+├── tests/
+│   ├── __init__.py
+│   └── test_engines.py     # Comprehensive automated test suite (pytest)
+│
+└── app/
+    └── dashboard.py        # Streamlit web application for the UI
+```
+
+
 # Automated Portfolio Financing System: Functional & Technical Specification
 
 This document serves as the unified master specification for the Automated Portfolio Financing Product Suite. It details both the functional requirements (business logic) and technical specifications (mathematical and programmatic logic) for all system modules, accompanied by architectural diagrams and concrete business examples to facilitate understanding and validate testing.
