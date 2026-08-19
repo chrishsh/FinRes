@@ -96,7 +96,7 @@ sequenceDiagram
     participant Data as Inventory Ledger
     participant Int as Internalization
     participant Comp as Compliance & Locates
-    participant Opt as Collateral Optimizer
+    participant CO as Collateral Optimizer
     participant PnL as Pricing Engine
     
     Data->>Int: Send Gross Longs & Shorts (per strategy)
@@ -104,9 +104,9 @@ sequenceDiagram
     Int->>Comp: Pass Net External Exposure
     Comp->>Comp: Validate against US Reg T/SHO & APAC rules
     Comp->>Comp: Query PB Simulator for Locates (if Short)
-    Comp->>Opt: Send validated Margin Requirements
-    Opt->>Opt: Run MILP to pledge cheapest available HQLA/Equity
-    Opt->>PnL: Emit Optimized Funding State
+    Comp->>CO: Send validated Margin Requirements
+    CO->>CO: Run MILP to pledge cheapest available HQLA/Equity
+    CO->>PnL: Emit Optimized Funding State
     PnL->>PnL: Compute Daily Accruals & Financing Fees
     PnL-->>Data: Update Ledger with P&L impact
 ```
