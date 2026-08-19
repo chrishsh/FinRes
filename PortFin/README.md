@@ -2,16 +2,7 @@
 
 This document outlines the architecture and implementation plan for the **Automated Portfolio Financing System**, serving as a blueprint for both the interactive Jupyter Notebook prototype and the web-based front-end production suite.
 
-## Goal Description
-Build an Automated Portfolio Financing system that functions similarly to an Automated Market Maker (AMM). The system autonomously calculates net exposure, allocates optimal collateral, tracks P&L, simulates market conditions, and ensures **cross-border regulatory compliance**. 
-
-Manual intervention is explicitly supported via a comprehensive **Manual Trade Entry Module**, accommodating a full suite of financing instruments (Equity/Bond Borrowing, Repo, Swaps, Sell/Buybacks, etc.).
-
-## Unified Product Specification
-For complete documentation, zoom-in workflow diagrams, mathematical models, and compliance rules covering the entire system, please refer to the specification below.
-
-
-## Product Overview
+## Overview of the Repository Files
 
 ```text
 portfolio_financing/
