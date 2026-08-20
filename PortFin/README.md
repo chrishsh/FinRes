@@ -150,8 +150,7 @@ graph TD
 ### 3.3 Technical Specification
 *   **Net Exposure**: $Net\_Quantity_i = \sum_{desk} Quantity_{i, desk}$
 *   **Internalization Ratio Calculation**: 
-    \[ \text{Internalization Ratio} = 1 - \frac{\sum |Net\_Quantity_i|}{\sum |Gross\_Quantity_i|} \]
-
+    $$\text{Internalization Ratio} = 1 - \frac{\sum |\text{Net\_Quantity}_i|}{\sum |\text{Gross\_Quantity}_i|}$$
 ### 3.4 Business Example
 *   **Scenario**: StatArb is Long 10,000 AAPL and VolArb is Short 4,000 AAPL. 
 *   **Execution**: The engine nets these to an external requirement of **Long 6,000 AAPL**. 
